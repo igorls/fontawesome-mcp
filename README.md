@@ -2,19 +2,19 @@
 
 A Model Context Protocol (MCP) server that provides access to FontAwesome icons through their GraphQL API. This server enables AI agents to search for and retrieve information about FontAwesome icons using fuzzy search capabilities.
 
-## ✨ Features
+## Features
 
-- **🔍 Fuzzy Icon Search**: Search for icons using natural language queries (e.g., "coffee", "user profile", "arrow left")
-- **🎯 Exact Icon Lookup**: Get specific icons by their exact name or alias
-- **📊 Release Information**: Get details about FontAwesome versions and releases
-- **👨‍💻 Framework-Aware**: Provides framework-specific usage instructions for Angular, React, Vue.js, and Vanilla HTML/CSS
-- **🎨 Family/Style Information**: Explore available icon families and styles including Pro+ families
-- **📋 Comprehensive Icon Data**: Access metadata including unicode values, CSS prefixes, license info, and change history
-- **🖼️ SVG Data Support**: Optional inclusion of SVG data and icon definitions
+- **Fuzzy Icon Search**: Search for icons using natural language queries (e.g., "coffee", "user profile", "arrow left")
+- **Exact Icon Lookup**: Get specific icons by their exact name or alias
+- **Release Information**: Get details about FontAwesome versions and releases
+- **Framework-Aware**: Provides framework-specific usage instructions for Angular, React, Vue.js, and Vanilla HTML/CSS
+- **Family/Style Information**: Explore available icon families and styles including Pro+ families
+- **Comprehensive Icon Data**: Access metadata including unicode values, CSS prefixes, license info, and change history
+- **SVG Data Support**: Optional inclusion of SVG data and icon definitions
 
-## 🚀 Framework-Aware Usage
+## Framework-Aware Usage
 
-**NEW**: The MCP server now provides framework-specific usage instructions! Set the `FRAMEWORK` environment variable to get tailored code snippets:
+The MCP server provides framework-specific usage instructions. Set the `FRAMEWORK` environment variable to get tailored code snippets:
 
 - **Angular** (`angular`) - Using `@fortawesome/angular-fontawesome`
 - **React** (`react`) - Using `@fortawesome/react-fontawesome` 
@@ -169,18 +169,35 @@ Each icon result includes:
 - `npm run dev` - Build and run in one command
 
 ### Testing
-Run the test script to verify the server works:
+
+Run the test suite to verify server functionality:
+
 ```bash
-node test-server.js
+npm test
+```
+
+Or run individual tests:
+
+```bash
+# Basic server test
+node tests/test-server.js
+
+# Framework-specific tests
+node tests/test-angular.js
+node tests/test-react.js  
+node tests/test-vue.js
+
+# All framework tests
+node tests/test-all-frameworks.js
 ```
 
 ## FontAwesome API Reference
 
 This server uses the public FontAwesome GraphQL API. Most functionality works without authentication, though some Pro features require an API token.
 
-- **API Endpoint**: https://api.fontawesome.com
-- **Documentation**: https://docs.fontawesome.com/apis/graphql
-- **Query Fields**: https://docs.fontawesome.com/apis/graphql/query-fields
+- **API Endpoint**: <https://api.fontawesome.com>
+- **Documentation**: <https://docs.fontawesome.com/apis/graphql>
+- **Query Fields**: <https://docs.fontawesome.com/apis/graphql/query-fields>
 
 ## Integration
 

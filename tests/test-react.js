@@ -16,7 +16,7 @@ process.env.FA_TOKEN = process.env.FA_TOKEN || 'your-token-here';
 console.log('Testing FontAwesome MCP Server with React framework...\n');
 
 // Start the MCP server
-const serverPath = path.join(__dirname, 'dist', 'server.js');
+const serverPath = path.join(__dirname, '..', 'dist', 'server.js');
 const server = spawn('node', [serverPath], {
   stdio: ['pipe', 'pipe', 'inherit'],
   env: { ...process.env, FRAMEWORK: 'react' }

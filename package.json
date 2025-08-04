@@ -13,12 +13,12 @@
     "clean": "rimraf dist",
     "prepublishOnly": "npm run clean && npm run build",
     "example": "node example.js",
-    "test": "node test-server.js",
-    "test-mcp": "node test-mcp-direct.js",
-    "test-frameworks": "node test-all-frameworks.js",
-    "test-angular": "node test-angular.js",
-    "test-react": "node test-react.js",
-    "test-vue": "node test-vue.js",
+    "test": "node tests/test-server.js",
+    "test-mcp": "node tests/test-mcp-direct.js",
+    "test-frameworks": "node tests/test-all-frameworks.js",
+    "test-angular": "node tests/test-angular.js",
+    "test-react": "node tests/test-react.js",
+    "test-vue": "node tests/test-vue.js",
     "setup-vscode": "node setup-vscode.js"
   },
   "keywords": [

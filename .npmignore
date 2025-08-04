@@ -3,7 +3,7 @@ src/
 tsconfig.json
 
 # Test files
-test-*.js
+tests/
 example.js
 setup-vscode.js
 showcase.html

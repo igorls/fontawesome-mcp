@@ -6,13 +6,18 @@
  */
 
 import { spawn } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 console.log('🚀 Testing FontAwesome MCP Server for VS Code...\n');
 
 // Start the server
 const server = spawn('node', ['dist/server.js'], {
   stdio: ['pipe', 'pipe', 'pipe'],
-  cwd: process.cwd()
+  cwd: path.dirname(__dirname)
 });
 
 let messageId = 0;
