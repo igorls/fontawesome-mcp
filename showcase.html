@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontAwesome v7 Pro+ Style Families Showcase</title>
+    <script src="https://kit.fontawesome.com/ee11b75fa6.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-color: #404040;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: var(--gradient-primary);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="70" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .family-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .family-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .family-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .family-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .family-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .family-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .family-info .prefix {
+            font-family: 'Monaco', 'Menlo', monospace;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .icon-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .icon-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.2s ease;
+        }
+
+        .icon-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.05);
+        }
+
+        .icon-item i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .icon-item .icon-name {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            font-family: 'Monaco', 'Menlo', monospace;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            font-weight: 500;
+        }
+
+        .mcp-section {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+
+        .mcp-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .config-card {
+            background: #1a202c;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid #2d3748;
+        }
+
+        .config-card h4 {
+            color: #63b3ed;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .code-block {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 1.5rem;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            border: 1px solid #21262d;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: #e6edf3;
+        }
+
+        .highlight {
+            color: #79c0ff;
+        }
+
+        .string {
+            color: #a5d6ff;
+        }
+
+        .comment {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #0d1117;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Pro+ Family Animations */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes notdogPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(251,191,36,0.3); }
+            50% { box-shadow: 0 0 40px rgba(239,68,68,0.5), 0 0 60px rgba(139,92,246,0.3); }
+        }
+
+        @keyframes notdogWiggle {
+            0%, 100% { transform: rotate(-5deg) scale(1.1); }
+            25% { transform: rotate(-8deg) scale(1.05); }
+            50% { transform: rotate(-2deg) scale(1.15); }
+            75% { transform: rotate(-7deg) scale(1.08); }
+        }
+
+        @keyframes notdogSpin {
+            0% { transform: rotate(10deg); }
+            100% { transform: rotate(370deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .family-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .config-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-showcase {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            }
+        }
+
+        /* Duotone icon animations and effects */
+        .icon-item i.fad {
+            transition: all 0.3s ease;
+        }
+
+        .icon-item:hover i.fad {
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        /* Special duotone hover effects */
+        .icon-item:hover i.fad[style*="4facfe"] {
+            --fa-primary-color: #00f2fe !important;
+            --fa-secondary-color: #4facfe !important;
+        }
+
+        .icon-item:hover i.fad[style*="f093fb"] {
+            --fa-primary-color: #f5576c !important;
+            --fa-secondary-color: #f093fb !important;
+        }
+
+        .icon-item:hover i.fad[style*="a8edea"] {
+            --fa-primary-color: #fed6e3 !important;
+            --fa-secondary-color: #a8edea !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-star"></i> FontAwesome v7 Pro+ Showcase</h1>
+            <p>Explore the cutting-edge Pro+ style families with our MCP server integration</p>
+            <div class="badges">
+                <span class="badge"><i class="fad fa-rocket"></i> FontAwesome v7</span>
+                <span class="badge"><i class="facr fa-star"></i> Pro+ Styles</span>
+                <span class="badge"><i class="faes fa-plug"></i> MCP Integration</span>
+                <span class="badge"><i class="fawsb fa-rocket-launch"></i> GraphQL API</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MCP Introduction Section -->
+    <section class="section">
+        <div class="container">
+            <div class="mcp-intro-section" style="background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); border-radius: 20px; padding: 3rem; margin: 2rem 0; text-align: center;">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="color: #e2e8f0; font-size: 2.2rem; margin-bottom: 1.5rem;">
+                        <i class="fad fa-plug" style="--fa-primary-color: #4facfe; --fa-secondary-color: #00f2fe; --fa-secondary-opacity: 0.6; margin-right: 0.5rem;"></i>
+                        What is this MCP Server?
+                    </h2>
+                    <p style="color: #a0aec0; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                        This Model Context Protocol (MCP) server brings FontAwesome's powerful GraphQL API directly into your development workflow. 
+                        Whether you're using VS Code, Claude Desktop, or any MCP-compatible client, you can now search, discover, and integrate 
+                        FontAwesome icons without leaving your coding environment.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                                <i class="fad fa-search" style="--fa-primary-color: #68d391; --fa-secondary-color: #38a169; --fa-secondary-opacity: 0.6;"></i>
+                            </div>
+                            <h4 style="color: #e2e8f0; margin-bottom: 0.5rem;">Smart Search</h4>
+                            <p style="color: #a0aec0; font-size: 0.9rem;">Find icons with intelligent fuzzy matching and family filtering</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                                <i class="fad fa-star" style="--fa-primary-color: #f093fb; --fa-secondary-color: #f5576c; --fa-secondary-opacity: 0.6;"></i>
+                            </div>
+                            <h4 style="color: #e2e8f0; margin-bottom: 0.5rem;">Pro+ Access</h4>
+                            <p style="color: #a0aec0; font-size: 0.9rem;">Full access to all Pro+ families and exclusive icons</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                                <i class="fad fa-code" style="--fa-primary-color: #fbb6ce; --fa-secondary-color: #ed64a6; --fa-secondary-opacity: 0.6;"></i>
+                            </div>
+                            <h4 style="color: #e2e8f0; margin-bottom: 0.5rem;">Developer Tools</h4>
+                            <p style="color: #a0aec0; font-size: 0.9rem;">Integrated workflow with VS Code and Claude Desktop</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                                <i class="fad fa-rocket" style="--fa-primary-color: #63b3ed; --fa-secondary-color: #3182ce; --fa-secondary-opacity: 0.6;"></i>
+                            </div>
+                            <h4 style="color: #e2e8f0; margin-bottom: 0.5rem;">GraphQL API</h4>
+                            <p style="color: #a0aec0; font-size: 0.9rem;">Direct connection to FontAwesome's official GraphQL endpoint</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro+ Families Showcase -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Pro+ Style Families</h2>
+            
+            <div class="family-grid">
+                <!-- Chisel Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #2d5a3d 0%, #1a3d2e 100%); border: 2px solid #4a7c59; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><polygon points=\"10,10 20,5 30,15 25,25\" fill=\"rgba(74,124,89,0.1)\"/><polygon points=\"70,30 80,25 90,35 85,45\" fill=\"rgba(74,124,89,0.1)\"/><polygon points=\"40,70 50,65 60,75 55,85\" fill=\"rgba(74,124,89,0.1)\"/></svg>'); opacity: 0.3;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #4a7c59 0%, #2d5a3d 100%); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                            <i class="facr fa-star" style="color: #7dd3fc; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #a7f3d0;">Chisel</h3>
+                            <span class="prefix" style="background: rgba(125, 211, 252, 0.2); color: #7dd3fc; border: 1px solid #4a7c59;">facr</span>
+                        </div>
+                    </div>
+                    <p style="color: #d1fae5; position: relative; z-index: 2;">Bold, carved aesthetic with strong geometric lines and dimensional depth.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="facr fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="facr fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="facr fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="facr fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jelly Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 100%); border: 2px solid #f59e0b; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"20\" cy=\"30\" r=\"8\" fill=\"rgba(245,158,11,0.2)\"/><circle cx=\"70\" cy=\"20\" r=\"6\" fill=\"rgba(245,158,11,0.2)\"/><circle cx=\"80\" cy=\"60\" r=\"10\" fill=\"rgba(245,158,11,0.2)\"/><circle cx=\"30\" cy=\"80\" r=\"7\" fill=\"rgba(245,158,11,0.2)\"/></svg>'); opacity: 0.4;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 6px 12px rgba(245,158,11,0.3); transform: scale(1.05);">
+                            <i class="fajr fa-star" style="color: #fef3c7; animation: bounce 2s infinite; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Jelly</h3>
+                            <span class="prefix" style="background: rgba(255, 255, 255, 0.3); color: #ffffff; border: 1px solid #f59e0b; border-radius: 8px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">fajr</span>
+                        </div>
+                    </div>
+                    <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); position: relative; z-index: 2; font-weight: 500;">Soft, rounded forms with a playful, bouncy appearance perfect for friendly interfaces.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="fajr fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fajr fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fajr fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fajr fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etch Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); border: 2px solid #3b82f6; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M10,20 L30,20 L30,30 L50,30 L50,20 L70,20 L70,40 L90,40\" stroke=\"rgba(59,130,246,0.3)\" stroke-width=\"2\" fill=\"none\"/><path d=\"M20,50 L40,50 L40,60 L60,60 L60,50 L80,50\" stroke=\"rgba(59,130,246,0.3)\" stroke-width=\"2\" fill=\"none\"/><path d=\"M15,70 L35,70 L35,80 L55,80 L55,70 L75,70 L75,90\" stroke=\"rgba(59,130,246,0.3)\" stroke-width=\"2\" fill=\"none\"/></svg>'); opacity: 0.4;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); box-shadow: 0 4px 8px rgba(59,130,246,0.4), inset 0 1px 2px rgba(255,255,255,0.2);">
+                            <i class="faes fa-star" style="color: #dbeafe; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #dbeafe; font-weight: 700;">Etch</h3>
+                            <span class="prefix" style="background: rgba(219, 234, 254, 0.2); color: #dbeafe; border: 1px solid #3b82f6; font-weight: 600;">faes</span>
+                        </div>
+                    </div>
+                    <p style="color: #bfdbfe; position: relative; z-index: 2; font-weight: 500;"><strong style="color: #dbeafe;">Forged for impact.</strong> Icons cut from a single, connected sheet of metal with industrial precision.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="faes fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="faes fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="faes fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="faes fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notdog Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #1f2937 0%, #fbbf24 30%, #ef4444 60%, #8b5cf6 100%); border: 3px solid #fbbf24; position: relative; overflow: hidden; animation: notdogPulse 3s ease-in-out infinite;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"10\" y=\"15\" width=\"15\" height=\"10\" fill=\"rgba(251,191,36,0.3)\" transform=\"rotate(15)\"/><circle cx=\"70\" cy=\"25\" r=\"8\" fill=\"rgba(239,68,68,0.3)\"/><polygon points=\"20,60 35,55 30,75 15,70\" fill=\"rgba(139,92,246,0.3)\"/><rect x=\"70\" y=\"70\" width=\"12\" height=\"8\" fill=\"rgba(251,191,36,0.3)\" transform=\"rotate(-20)\"/></svg>'); opacity: 0.5;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(45deg, #fbbf24 0%, #ef4444 50%, #8b5cf6 100%); box-shadow: 0 6px 12px rgba(0,0,0,0.4); transform: rotate(-5deg) scale(1.1); animation: notdogWiggle 4s ease-in-out infinite;">
+                            <i class="fans fa-star" style="color: #ffffff; transform: rotate(10deg); text-shadow: 0 3px 6px rgba(0,0,0,0.5); animation: notdogSpin 8s linear infinite;"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #fbbf24; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-weight: 900;">Notdog</h3>
+                            <span class="prefix" style="background: linear-gradient(45deg, #ef4444, #8b5cf6); color: #ffffff; border: 2px solid #fbbf24; transform: rotate(-3deg); font-weight: bold;">fans</span>
+                        </div>
+                    </div>
+                    <p style="color: #fde68a; position: relative; z-index: 2; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Quirky, unconventional style that breaks traditional icon design rules with personality.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="fans fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fans fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fans fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fans fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slab Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%); border: 4px solid #dc2626; position: relative; overflow: hidden; box-shadow: 0 8px 16px rgba(220,38,38,0.3);">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"5\" y=\"10\" width=\"20\" height=\"15\" fill=\"rgba(220,38,38,0.3)\"/><rect x=\"70\" y=\"5\" width=\"25\" height=\"20\" fill=\"rgba(220,38,38,0.3)\"/><rect x=\"15\" y=\"70\" width=\"30\" height=\"18\" fill=\"rgba(220,38,38,0.3)\"/><rect x=\"60\" y=\"75\" width=\"22\" height=\"12\" fill=\"rgba(220,38,38,0.3)\"/></svg>'); opacity: 0.4;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); box-shadow: 0 6px 12px rgba(220,38,38,0.4); border: 2px solid #fca5a5;">
+                            <i class="faslr fa-star" style="color: #fecaca; font-weight: 900; text-shadow: 0 3px 6px rgba(0,0,0,0.5);"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #fecaca; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Slab</h3>
+                            <span class="prefix" style="background: rgba(254, 202, 202, 0.2); color: #fecaca; border: 2px solid #dc2626; font-weight: bold;">faslr</span>
+                        </div>
+                    </div>
+                    <p style="color: #fecaca; position: relative; z-index: 2; font-weight: 700;">Bold, chunky letterforms with strong serifs creating powerful visual impact.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="faslr fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="faslr fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="faslr fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="faslr fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thumbprint Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 30%, #ec4899 60%, #8b5cf6 100%); border: 2px solid #f59e0b; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><ellipse cx=\"25\" cy=\"30\" rx=\"8\" ry=\"12\" fill=\"rgba(236,72,153,0.3)\" transform=\"rotate(15)\"/><ellipse cx=\"70\" cy=\"25\" rx=\"6\" ry=\"9\" fill=\"rgba(139,92,246,0.3)\" transform=\"rotate(-10)\"/><ellipse cx=\"80\" cy=\"65\" rx=\"10\" ry=\"15\" fill=\"rgba(245,158,11,0.3)\" transform=\"rotate(25)\"/><ellipse cx=\"35\" cy=\"75\" rx=\"7\" ry=\"11\" fill=\"rgba(236,72,153,0.3)\" transform=\"rotate(-20)\"/></svg>'); opacity: 0.5;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%); box-shadow: 0 6px 12px rgba(236,72,153,0.3); border: 2px solid #fbbf24;">
+                            <i class="fatl fa-star" style="color: #fef3c7; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); font-weight: 700;">Thumbprint</h3>
+                            <span class="prefix" style="background: rgba(255, 255, 255, 0.3); color: #ffffff; border: 1px solid #f59e0b; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">fatl</span>
+                        </div>
+                    </div>
+                    <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); position: relative; z-index: 2; font-weight: 500;"><strong style="color: #ffffff;">Leave your mark.</strong> Playful icons inspired by Ed Emberley's thumbprint drawings with colorful, friendly charm.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="fatl fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fatl fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fatl fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fatl fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whiteboard Family -->
+                <div class="family-card" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0ea5e9; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><line x1=\"10\" y1=\"20\" x2=\"30\" y2=\"15\" stroke=\"rgba(14,165,233,0.2)\" stroke-width=\"2\" stroke-dasharray=\"3,2\"/><line x1=\"70\" y1=\"25\" x2=\"90\" y2=\"35\" stroke=\"rgba(14,165,233,0.2)\" stroke-width=\"2\" stroke-dasharray=\"3,2\"/><circle cx=\"25\" cy=\"60\" r=\"3\" fill=\"rgba(14,165,233,0.3)\"/><circle cx=\"75\" cy=\"70\" r=\"2\" fill=\"rgba(14,165,233,0.3)\"/><rect x=\"40\" y=\"75\" width=\"20\" height=\"15\" stroke=\"rgba(14,165,233,0.2)\" stroke-width=\"1.5\" fill=\"none\" stroke-dasharray=\"2,1\"/></svg>'); opacity: 0.5;"></div>
+                    <div class="family-header" style="position: relative; z-index: 2;">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); box-shadow: 0 4px 8px rgba(14,165,233,0.3); border: 2px dashed #7dd3fc;">
+                            <i class="fawsb fa-star" style="color: #f0f9ff; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #0c4a6e; font-family: 'Comic Sans MS', cursive;">Whiteboard</h3>
+                            <span class="prefix" style="background: rgba(12, 74, 110, 0.1); color: #0c4a6e; border: 1px dashed #0ea5e9; font-family: 'Comic Sans MS', cursive;">fawsb</span>
+                        </div>
+                    </div>
+                    <p style="color: #0c4a6e; position: relative; z-index: 2; font-family: 'Comic Sans MS', cursive;">Clean, marker-drawn style perfect for presentations and educational interfaces.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="fawsb fa-star"></i>
+                            <div class="icon-name">fa-star</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fawsb fa-heart"></i>
+                            <div class="icon-name">fa-heart</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fawsb fa-home"></i>
+                            <div class="icon-name">fa-home</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fawsb fa-user"></i>
+                            <div class="icon-name">fa-user</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duotone Unconventional Icons Section -->
+    <section class="section" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); margin: 4rem 0; border-radius: 20px;">
+        <div class="container">
+            <h2 class="section-title" style="color: #ffffff; margin-bottom: 1rem;">Duotone Unconventional Icons</h2>
+            <p style="text-align: center; color: #b3d9ff; margin-bottom: 3rem; font-size: 1.1rem;">
+                Explore FontAwesome's most creative and unexpected icons with beautiful duotone styling
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Sci-Fi & Fantasy Collection -->
+                <div class="family-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <div class="family-header">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fad fa-alien" style="--fa-primary-color: #4facfe; --fa-secondary-color: #00f2fe; --fa-secondary-opacity: 0.6;"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #ffffff;">Sci-Fi & Fantasy</h3>
+                            <span class="prefix" style="background: rgba(79, 172, 254, 0.3);">fad</span>
+                        </div>
+                    </div>
+                    <p style="color: #b3d9ff;">From aliens to dragons, these icons bring fantasy to life with stunning duotone effects.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="fad fa-alien" style="--fa-primary-color: #4facfe; --fa-secondary-color: #00f2fe; --fa-secondary-opacity: 0.6;"></i>
+                            <div class="icon-name">fa-alien</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-alien-8bit" style="--fa-primary-color: #a8edea; --fa-secondary-color: #fed6e3; --fa-secondary-opacity: 0.6;"></i>
+                            <div class="icon-name">fa-alien-8bit</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-ufo" style="--fa-primary-color: #ffecd2; --fa-secondary-color: #fcb69f; --fa-secondary-opacity: 0.7;"></i>
+                            <div class="icon-name">fa-ufo</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-ufo-beam" style="--fa-primary-color: #667eea; --fa-secondary-color: #764ba2; --fa-secondary-opacity: 0.8;"></i>
+                            <div class="icon-name">fa-ufo-beam</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-dragon" style="--fa-primary-color: #ff9a9e; --fa-secondary-color: #fecfef; --fa-secondary-opacity: 0.6;"></i>
+                            <div class="icon-name">fa-dragon</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-wand" style="--fa-primary-color: #f093fb; --fa-secondary-color: #f5576c; --fa-secondary-opacity: 0.7;"></i>
+                            <div class="icon-name">fa-wand</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quirky Everyday Collection -->
+                <div class="family-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <div class="family-header">
+                        <div class="family-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fad fa-toilet" style="--fa-primary-color: #f093fb; --fa-secondary-color: #f5576c; --fa-secondary-opacity: 0.6;"></i>
+                        </div>
+                        <div class="family-info">
+                            <h3 style="color: #ffffff;">Quirky Everyday</h3>
+                            <span class="prefix" style="background: rgba(240, 147, 251, 0.3);">fad</span>
+                        </div>
+                    </div>
+                    <p style="color: #b3d9ff;">Unexpectedly detailed icons for the most mundane (and funny) aspects of life.</p>
+                    <div class="icon-showcase">
+                        <div class="icon-item">
+                            <i class="fad fa-toilet" style="--fa-primary-color: #a8edea; --fa-secondary-color: #fed6e3; --fa-secondary-opacity: 0.6;"></i>
+                            <div class="icon-name">fa-toilet</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-toilet-portable" style="--fa-primary-color: #ffecd2; --fa-secondary-color: #fcb69f; --fa-secondary-opacity: 0.7;"></i>
+                            <div class="icon-name">fa-toilet-portable</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-toilet-paper-under" style="--fa-primary-color: #667eea; --fa-secondary-color: #764ba2; --fa-secondary-opacity: 0.8;"></i>
+                            <div class="icon-name">fa-toilet-paper-under</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-beer-mug" style="--fa-primary-color: #ff9a9e; --fa-secondary-color: #fecfef; --fa-secondary-opacity: 0.6;"></i>
+                            <div class="icon-name">fa-beer-mug</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-campfire" style="--fa-primary-color: #f093fb; --fa-secondary-color: #f5576c; --fa-secondary-opacity: 0.7;"></i>
+                            <div class="icon-name">fa-campfire</div>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fad fa-user-alien" style="--fa-primary-color: #4facfe; --fa-secondary-color: #00f2fe; --fa-secondary-opacity: 0.6;"></i>
+                            <div class="icon-name">fa-user-alien</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duotone Features Info -->
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                <h4 style="color: #ffffff; margin-bottom: 1.5rem; text-align: center;"><i class="fad fa-palette"></i> Duotone Magic</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                            <i class="fad fa-layer-group" style="--fa-primary-color: #4facfe; --fa-secondary-color: #00f2fe; --fa-secondary-opacity: 0.6;"></i>
+                        </div>
+                        <h5 style="color: #ffffff; margin-bottom: 0.5rem;">Two-Layer Design</h5>
+                        <p style="color: #b3d9ff; font-size: 0.9rem;">Primary and secondary colors create depth and visual interest</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                            <i class="fad fa-adjust" style="--fa-primary-color: #a8edea; --fa-secondary-color: #fed6e3; --fa-secondary-opacity: 0.7;"></i>
+                        </div>
+                        <h5 style="color: #ffffff; margin-bottom: 0.5rem;">Customizable Opacity</h5>
+                        <p style="color: #b3d9ff; font-size: 0.9rem;">Control transparency with --fa-secondary-opacity CSS property</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                            <i class="fad fa-paint-brush" style="--fa-primary-color: #f093fb; --fa-secondary-color: #f5576c; --fa-secondary-opacity: 0.6;"></i>
+                        </div>
+                        <h5 style="color: #ffffff; margin-bottom: 0.5rem;">Easy Color Control</h5>
+                        <p style="color: #b3d9ff; font-size: 0.9rem;">Use CSS custom properties to change colors dynamically</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9rem;">
+                    <div style="color: #63b3ed; margin-bottom: 0.5rem;">CSS Example:</div>
+                    <code style="color: #e2e8f0;">
+                        .my-duotone-icon {<br>
+                        &nbsp;&nbsp;--fa-primary-color: #4facfe;<br>
+                        &nbsp;&nbsp;--fa-secondary-color: #00f2fe;<br>
+                        &nbsp;&nbsp;--fa-secondary-opacity: 0.6;<br>
+                        }
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MCP Integration Section -->
+    <section class="section">
+        <div class="container">
+            <div class="mcp-section">
+                <h2 class="mcp-title"><i class="fajr fa-plug"></i> MCP Server Integration</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: #a0aec0;">
+                    Integrate FontAwesome icons directly into your development workflow with our Model Context Protocol server
+                </p>
+
+                <div class="config-grid">
+                    <div class="config-card">
+                        <h4><i class="fans fa-folder-open"></i> VS Code Configuration</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// .vscode/mcp.json</span>
+{
+  "<span class="highlight">servers</span>": {
+    "<span class="string">fontawesome</span>": {
+      "<span class="highlight">command</span>": "<span class="string">node</span>",
+      "<span class="highlight">args</span>": ["<span class="string">./dist/server.js</span>"],
+      "<span class="highlight">env</span>": {
+        "<span class="string">FONTAWESOME_API_TOKEN</span>": "<span class="string">your-token-here</span>"
+      }
+    }
+  }
+}</pre>
+                        </div>
+                    </div>
+
+                    <div class="config-card">
+                        <h4><i class="fatl fa-desktop"></i> Claude Desktop Configuration</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// claude_desktop_config.json</span>
+{
+  "<span class="highlight">mcpServers</span>": {
+    "<span class="string">fontawesome</span>": {
+      "<span class="highlight">command</span>": "<span class="string">node</span>",
+      "<span class="highlight">args</span>": ["<span class="string">path/to/dist/server.js</span>"],
+      "<span class="highlight">env</span>": {
+        "<span class="string">FONTAWESOME_API_TOKEN</span>": "<span class="string">your-token-here</span>"
+      }
+    }
+  }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h4 style="text-align: center; margin-bottom: 1.5rem; color: #63b3ed;"><i class="faslr fa-tools"></i> Available MCP Tools</h4>
+                    <div class="family-grid">
+                        <div class="config-card">
+                            <h4><i class="fad fa-search"></i> search_icons</h4>
+                            <p style="color: #a0aec0; margin-bottom: 1rem;">Search for FontAwesome icons with fuzzy matching</p>
+                            <div class="code-block">
+                                <pre>Parameters:
+- <span class="highlight">query</span>: Search terms
+- <span class="highlight">limit</span>: Max results (1-50)
+- <span class="highlight">family_styles</span>: Filter by families
+- <span class="highlight">include_svgs</span>: Include SVG data</pre>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <h4><i class="fasr fa-bullseye"></i> get_icon_by_name</h4>
+                            <p style="color: #a0aec0; margin-bottom: 1rem;">Get specific icon by exact name or alias</p>
+                            <div class="code-block">
+                                <pre>Parameters:
+- <span class="highlight">name</span>: Exact icon name
+- <span class="highlight">family_styles</span>: Filter by families
+- <span class="highlight">include_svgs</span>: Include SVG data</pre>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <h4><i class="fasds fa-chart-line"></i> get_release_info</h4>
+                            <p style="color: #a0aec0; margin-bottom: 1rem;">Get FontAwesome version and release details</p>
+                            <div class="code-block">
+                                <pre>Parameters:
+- <span class="highlight">version</span>: FA version (e.g., '7.x')
+- <span class="highlight">list_all</span>: List all releases</pre>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <h4><i class="faslpr fa-palette"></i> get_family_styles</h4>
+                            <p style="color: #a0aec0; margin-bottom: 1rem;">List all available family/style combinations</p>
+                            <div class="code-block">
+                                <pre>Parameters:
+- <span class="highlight">version</span>: FA version (e.g., '7.x')</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,193,7,0.1); border-radius: 15px; border-left: 4px solid #ffc107;">
+                        <h4 style="color: #ffc107; margin-bottom: 1rem;"><i class="fad fa-lightbulb"></i> MCP Tool Insights & Improvements</h4>
+                        <p style="color: #e2e8f0; margin-bottom: 1rem;">
+                            Based on real-world testing, here are key insights about the MCP tools:
+                        </p>
+                        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #63b3ed;"><i class="faes fa-search"></i> Search Strategy:</strong> Use single keywords instead of complex phrases. 
+                                "star" works better than "star rocket crown plug"
+                            </div>
+                            <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #68d391;"><i class="fajr fa-check-circle"></i> Icon Coverage:</strong> Not all icons support all Pro+ families. 
+                                Use get_icon_by_name to see available families per icon
+                            </div>
+                            <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #f687b3;"><i class="fans fa-gem"></i> Pro+ Discovery:</strong> Some icons like "rocket-launch" are exclusive to certain Pro+ families (whiteboard)
+                            </div>
+                            <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #fbb6ce;"><i class="fatl fa-bolt"></i> Performance:</strong> family_styles filtering can significantly improve search relevance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>FontAwesome v7 Pro+ MCP Server</h3>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Built with <i class="fajfr fa-heart" style="color: #e53e3e;"></i> using TypeScript, MCP SDK, and FontAwesome's GraphQL API
+            </p>
+            <div class="social-links">
+                <a href="https://fontawesome.com" title="FontAwesome">
+                    <i class="fab fa-font-awesome"></i>
+                </a>
+                <a href="https://github.com/modelcontextprotocol" title="MCP">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://graphql.org" title="GraphQL">
+                    <i class="fas fa-database"></i>
+                </a>
+                <a href="https://code.visualstudio.com" title="VS Code">
+                    <i class="fas fa-code"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.family-card, .stat-card, .config-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Add hover effects to icons
+            document.querySelectorAll('.icon-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) rotate(5deg)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+        });
+
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

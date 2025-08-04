@@ -1,0 +1,24 @@
+# Source files
+src/
+tsconfig.json
+
+# Test files
+test-*.js
+example.js
+setup-vscode.js
+showcase.html
+
+# Development files
+.env
+.env.*
+.vscode/
+node_modules/
+*.log
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Build artifacts (but keep dist/ for publication)
+*.tsbuildinfo

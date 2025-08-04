@@ -2,14 +2,26 @@
 
 A Model Context Protocol (MCP) server that provides access to FontAwesome icons through their GraphQL API. This server enables AI agents to search for and retrieve information about FontAwesome icons using fuzzy search capabilities.
 
-## Features
+## ✨ Features
 
-- **Fuzzy Icon Search**: Search for icons using natural language queries (e.g., "coffee", "user profile", "arrow left")
-- **Exact Icon Lookup**: Get specific icons by their exact name or alias
-- **Release Information**: Get details about FontAwesome versions and releases
-- **Family/Style Information**: Explore available icon families and styles
-- **Comprehensive Icon Data**: Access metadata including unicode values, CSS prefixes, license info, and change history
-- **SVG Data Support**: Optional inclusion of SVG data and icon definitions
+- **🔍 Fuzzy Icon Search**: Search for icons using natural language queries (e.g., "coffee", "user profile", "arrow left")
+- **🎯 Exact Icon Lookup**: Get specific icons by their exact name or alias
+- **📊 Release Information**: Get details about FontAwesome versions and releases
+- **👨‍💻 Framework-Aware**: Provides framework-specific usage instructions for Angular, React, Vue.js, and Vanilla HTML/CSS
+- **🎨 Family/Style Information**: Explore available icon families and styles including Pro+ families
+- **📋 Comprehensive Icon Data**: Access metadata including unicode values, CSS prefixes, license info, and change history
+- **🖼️ SVG Data Support**: Optional inclusion of SVG data and icon definitions
+
+## 🚀 Framework-Aware Usage
+
+**NEW**: The MCP server now provides framework-specific usage instructions! Set the `FRAMEWORK` environment variable to get tailored code snippets:
+
+- **Angular** (`angular`) - Using `@fortawesome/angular-fontawesome`
+- **React** (`react`) - Using `@fortawesome/react-fontawesome` 
+- **Vue.js** (`vue`) - Using `@fortawesome/vue-fontawesome`
+- **Vanilla** (`vanilla`) - Using CSS classes or FontAwesome Kit
+
+See [FRAMEWORK-AWARE.md](./FRAMEWORK-AWARE.md) for detailed documentation.
 
 ## Installation
 

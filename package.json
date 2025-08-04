@@ -1,22 +1,59 @@
 {
   "name": "fontawesome-mcp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Model Context Protocol server providing framework-aware access to FontAwesome icons with comprehensive search and usage generation capabilities",
+  "main": "dist/server.js",
+  "bin": {
+    "fontawesome-mcp": "dist/server.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "tsc && node dist/server.js",
     "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
     "example": "node example.js",
     "test": "node test-server.js",
     "test-mcp": "node test-mcp-direct.js",
+    "test-frameworks": "node test-all-frameworks.js",
+    "test-angular": "node test-angular.js",
+    "test-react": "node test-react.js",
+    "test-vue": "node test-vue.js",
     "setup-vscode": "node setup-vscode.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "fontawesome",
+    "icons",
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "assistant",
+    "graphql",
+    "angular",
+    "react",
+    "vue",
+    "framework-aware"
+  ],
+  "author": "FontAwesome MCP Team",
   "license": "ISC",
   "type": "module",
+  "homepage": "https://github.com/username/fontawesome-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/fontawesome-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/fontawesome-mcp/issues"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "FRAMEWORK-AWARE.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.1",
     "dotenv": "^17.2.1",
