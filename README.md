@@ -188,4 +188,4 @@ This MCP server can be integrated with any MCP-compatible AI system or applicati
 
 ## License
 
-This project is licensed under the ISC License. FontAwesome icons and their associated data are subject to FontAwesome's licensing terms.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. FontAwesome icons and their associated data are subject to FontAwesome's licensing terms.
