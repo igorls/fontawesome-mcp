@@ -34,16 +34,18 @@
     "vue",
     "framework-aware"
   ],
-  "author": "FontAwesome MCP Team",
-  "license": "ISC",
+  "author": {
+    "name": "Igor Lins e Silva"
+  },
+  "license": "MIT",
   "type": "module",
-  "homepage": "https://github.com/username/fontawesome-mcp#readme",
+  "homepage": "https://github.com/igorls/fontawesome-mcp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/fontawesome-mcp.git"
+    "url": "git+https://github.com/igorls/fontawesome-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/username/fontawesome-mcp/issues"
+    "url": "https://github.com/igorls/fontawesome-mcp/issues"
   },
   "files": [
     "dist/",
